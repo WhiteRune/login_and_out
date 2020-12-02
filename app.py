@@ -17,11 +17,8 @@ def get_and_post_request():
 
     elif request.method == 'POST':
         session['username'] = request.form['username']
-        if session['username'] == '':
-            return """<h1>You forgot fill up the row</hq>"""
-        else:
-            username = session['username']
-            return render_template('logged.html', username=username)
+        username = session['username']
+        return render_template('logged.html', username=username)
 
     else:
         return"""<h1> You are already logged in.</h1>"""
